@@ -1,8 +1,11 @@
 const express = require("express")
 const router = express.Router()
+const passport = require('passport')
+const jwt = require('jsonwebtoken')
 
+const User = require('../models/user')
 // Register
-router.get('/register', (req, res, next) => {
+router.post('/register', (req, res, next) => {
     res.send('REGISTER')
 })
 
@@ -14,11 +17,6 @@ router.post('/authenticate', (req, res, next) => {
 // profile
 router.get('/profile', (req, res, next) => {
     res.send('profile')
-})
-
-// validate
-router.get('/validate', (req, res, next) => {
-    res.send('validate')
 })
 
 module.exports = router;
